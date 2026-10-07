@@ -140,7 +140,7 @@ def download_certificate(job_id: str, cert_id: str, db: Session = Depends(get_db
             detail="Certificate file is missing from disk.",
         )
 
-    safe_name = f"certificate_{cert.recipient_name.replace(' ', '_')}_{cert.id[:8]}.pdf"
+    safe_name = f"{cert.recipient_name.replace(' ', '_')}.pdf"
     return FileResponse(
         path=cert.file_path,
         media_type="application/pdf",
