@@ -25,4 +25,6 @@ celery_app.conf.update(
     # Retry policy for transient failures
     task_acks_late=True,
     worker_prefetch_multiplier=1,
+    task_always_eager=settings.CELERY_TASK_ALWAYS_EAGER,
+    task_eager_propagates=settings.CELERY_TASK_ALWAYS_EAGER,
 )
